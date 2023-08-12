@@ -2,7 +2,7 @@
 import { defineStore } from 'pinia'
 
 
-export const useModalStore = defineStore('auth', {
+export const useModalStore = defineStore('modal', {
     state: () => ({        
         authModalShow: true
       
