@@ -77,7 +77,7 @@ let tab = ref('login')
           </ul>
 
     <LoginForm v-if="tab==='login'"/>
-   <RegisterForm v-else/>
+    <RegisterForm v-else/>
       
 
         </div>

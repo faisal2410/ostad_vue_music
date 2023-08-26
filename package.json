@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.11.1",
+    "firebase": "^10.3.0",
     "pinia": "^2.1.4",
     "vee-validate": "^4.11.1",
     "vue": "^3.3.4",

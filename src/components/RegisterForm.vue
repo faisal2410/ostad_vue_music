@@ -1,4 +1,6 @@
 <script setup>
+import {useUserStore} from '../stores/user.js'
+
 import { Form, Field, defineRule, ErrorMessage, configure } from 'vee-validate'
 import {
   required,
@@ -11,6 +13,9 @@ import {
   confirmed,
   not_one_of as excluded
 } from '@vee-validate/rules'
+
+
+const userStore=useUserStore()
 
 defineRule('required', required)
 defineRule('tos', required)
@@ -72,9 +77,7 @@ configure({
   
 })
 
- const register=(values)=> {  
-  console.log("=====>Submitted Data====>",values)
-}
+
 </script>
 <template>
   
@@ -88,7 +91,7 @@ configure({
           <Form
            
             :validation-schema="schema"
-            @submit="register"
+            @submit="userStore.register"
             :initial-values="userData"
           >
             <!-- Name -->
