@@ -8,6 +8,7 @@ import {
   alpha_spaces,
 
 } from '@vee-validate/rules'
+import {useUserStore} from '../stores/user.js'
 
 defineRule('required', required)
 defineRule('email', email)
@@ -15,24 +16,21 @@ defineRule('min', min)
 defineRule('max', max)
 defineRule('alpha_spaces', alpha_spaces)
 
-
+const userStore=useUserStore()
 
 let loginSchema = {
   email: 'required|email',
   password:'required|min:9|max:100'
 }
 
-const login = (values) => {
-  console.log(values)
-  
-}
+
 
 </script>
 <template>
      <!-- Login Form -->
           <Form  
            :validation-schema="loginSchema" 
-            @submit="login"
+            @submit="userStore.authenticate"
             >
             <!-- Email -->
             <div class="mb-3">
