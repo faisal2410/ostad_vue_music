@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from "../views/HomeView.vue";
 import About from "../views/AboutView.vue";
 import Manage from "../views/ManageView.vue";
+import NotFound from "../components/NotFound.vue";
 
 
 const routes = [
@@ -20,9 +21,10 @@ const routes = [
     path:"/manage",
     component: Manage,   
   }, 
-  {
-    path: "/:catchAll(.*)*",
-    redirect: { name: "home" },
+
+  { path: '/:pathMatch(.*)*',
+   name: 'NotFound',
+   component: NotFound 
   },
 
 
