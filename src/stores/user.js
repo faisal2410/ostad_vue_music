@@ -38,6 +38,7 @@ export const useUserStore = defineStore('user', {
         async signOut() {
             await signOut(auth)
             this.userLoggedIn = false;
+            window.location.reload()
         }
     }
 })
